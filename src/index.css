@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-gray-800;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-light transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-secondary-light transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .info-box {
+    @apply bg-blue-50 border-l-4 border-accent p-4 rounded-md my-4;
+  }
+  
+  .success-box {
+    @apply bg-green-50 border-l-4 border-green-500 p-4 rounded-md my-4;
+  }
+  
+  .tip-box {
+    @apply bg-cyan-50 border-l-4 border-cyan-500 p-4 rounded-md my-4;
+  }
+}
+
