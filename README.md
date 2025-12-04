@@ -46,13 +46,36 @@ npm run build
 npm run preview
 ```
 
-## 📦 Deployment to GitHub Pages
+## 📦 Deployment
 
-This project is configured for GitHub Pages deployment:
+### Option 1: Deploy to Vercel (Recommended - Free & Easy)
+
+1. **Sign up for Vercel**: Go to [vercel.com](https://vercel.com) and sign up with your GitHub account
+2. **Import your repository**: Click "New Project" and import `harslan/insightbox`
+3. **Configure settings**:
+   - Framework Preset: Vite
+   - Root Directory: `./` (default)
+   - Build Command: `npm run build` (auto-detected)
+   - Output Directory: `dist` (auto-detected)
+4. **Deploy**: Click "Deploy" - Vercel will automatically deploy your app
+5. **Your app will be live** at: `https://insightbox.vercel.app` (or your custom domain)
+
+**Benefits of Vercel:**
+- ✅ Free tier with generous limits
+- ✅ Automatic deployments on every push
+- ✅ Preview deployments for pull requests
+- ✅ Global CDN for fast loading
+- ✅ Automatic HTTPS/SSL
+- ✅ No configuration needed - it auto-detects Vite!
+
+### Option 2: Deploy to GitHub Pages
+
+This project is also configured for GitHub Pages deployment:
 
 1. **Update the repository name** in `vite.config.ts` if your repo name differs from `insightbox`
 2. **Push to GitHub**: The GitHub Actions workflow will automatically deploy on push to `main`
-3. **Enable GitHub Pages**: Go to Settings → Pages and select the `gh-pages` branch
+3. **Enable GitHub Pages**: Go to Settings → Pages and select "GitHub Actions" as the source
+4. **Approve the environment**: Approve the `github-pages` environment when prompted
 
 The app will be available at `https://yourusername.github.io/insightbox/`
 
