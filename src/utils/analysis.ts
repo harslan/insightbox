@@ -88,7 +88,6 @@ function analyzeColumn(data: any[], columnName: string): ColumnStats {
   const missingPercent = (missing / data.length) * 100
   
   // Try to determine type
-  let type: 'numeric' | 'categorical' | 'datetime' = 'categorical'
   let numericValues: number[] = []
   
   for (const val of values.slice(0, 100)) {
@@ -99,7 +98,6 @@ function analyzeColumn(data: any[], columnName: string): ColumnStats {
   }
   
   if (numericValues.length / Math.min(values.length, 100) > 0.8) {
-    type = 'numeric'
     const allNumeric = values.map(v => parseFloat(String(v))).filter(v => !isNaN(v) && isFinite(v))
     
     return {
@@ -197,7 +195,7 @@ function calculatePearsonCorrelation(x: number[], y: number[]): number {
   return denominator === 0 ? 0 : numerator / denominator
 }
 
-function performEFA(data: any[], columns: string[], eda: EDAResults): EFAResults | null {
+function performEFA(data: any[], _columns: string[], eda: EDAResults): EFAResults | null {
   const numericColumns = eda.columns
     .filter(c => c.type === 'numeric' && c.missingPercent < 50)
     .map(c => c.name)
@@ -344,13 +342,13 @@ function approximateEigenDecomposition(matrix: number[][]): { eigenvalues: numbe
   }
 }
 
-function calculateKMO(matrix: number[][]): number {
+function calculateKMO(_matrix: number[][]): number {
   // Simplified KMO approximation
   // In production, use proper statistical library
   return 0.6 + Math.random() * 0.3 // Placeholder
 }
 
-function calculateBartlettTest(matrix: number[][]): number {
+function calculateBartlettTest(_matrix: number[][]): number {
   // Simplified Bartlett's test approximation
   return 0.01 + Math.random() * 0.1 // Placeholder
 }

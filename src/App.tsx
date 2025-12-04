@@ -8,11 +8,9 @@ import { analyzeData } from './utils/analysis'
 
 function App() {
   const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null)
-  const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [currentStep, setCurrentStep] = useState<'upload' | 'analyzing' | 'results'>('upload')
 
   const handleFileUpload = async (file: File) => {
-    setIsAnalyzing(true)
     setCurrentStep('analyzing')
     
     try {
@@ -23,8 +21,6 @@ function App() {
       console.error('Analysis error:', error)
       alert('Error analyzing data. Please check your file format and try again.')
       setCurrentStep('upload')
-    } finally {
-      setIsAnalyzing(false)
     }
   }
 

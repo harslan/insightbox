@@ -1,4 +1,4 @@
-import { Upload, BarChart3, TrendingUp, Users, Zap, Shield } from 'lucide-react'
+import { Upload, BarChart3, TrendingUp, Users, Zap } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function Hero() {

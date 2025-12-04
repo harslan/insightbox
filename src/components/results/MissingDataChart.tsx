@@ -27,7 +27,7 @@ export default function MissingDataChart({ missingData }: MissingDataChartProps)
         <XAxis dataKey="column" angle={-45} textAnchor="end" height={100} />
         <YAxis label={{ value: 'Missing %', angle: -90, position: 'insideLeft' }} />
         <Tooltip
-          formatter={(value: number, name: string, props: any) => [
+          formatter={(value: number, _name: string, props: any) => [
             `${value.toFixed(1)}% (${props.payload.count} values)`,
             'Missing Data'
           ]}
